@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فروشگاه سوسو و جوجو | آیفون، ۵٪ ارزان‌تر از دیجی‌کالا و تکنولایف</title>
+<meta name="description" content="فروشگاه سوسو و جوجو — قیمت لحظه‌ای آیفون، همیشه ۵٪ ارزان‌تر از دیجی‌کالا و تکنولایف">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#ef394e; --red-dark:#d6273c; --teal:#19bfd3;
+  --bg:#f0f0f1; --card:#fff; --text:#23254e; --muted:#81858b;
+  --border:#e0e0e2; --green:#00a049; --radius:14px;
+  --shadow:0 4px 20px rgba(0,0,0,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Vazirmatn',Tahoma,sans-serif;background:var(--bg);color:var(--text);direction:rtl}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer;border:none}
+.container{max-width:1300px;margin:0 auto;padding:0 16px}
+section{scroll-margin-top:110px}
+
+.topbar{background:linear-gradient(90deg,var(--red-dark),var(--red));color:#fff;font-size:12.5px;padding:7px 0}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.topbar span{opacity:.95}
+
+header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.header-in{display:flex;align-items:center;gap:20px;padding:14px 0;flex-wrap:wrap}
+.logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-badge{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--red),#ff7a59);display:grid;place-items:center;color:#fff;font-size:22px;box-shadow:0 4px 12px rgba(239,57,78,.35)}
+.logo h1{font-size:19px;font-weight:800;line-height:1.2}
+.logo small{color:var(--muted);font-weight:400;font-size:11.5px}
+.search{flex:1;min-width:220px;position:relative}
+.search input{width:100%;padding:12px 44px 12px 16px;border:none;background:#f0f0f1;border-radius:10px;font-family:inherit;font-size:14px;outline:none;transition:.2s}
+.search input:focus{background:#e9e9eb;box-shadow:0 0 0 2px var(--red)}
+.search .s-icon{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--muted)}
+.header-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.btn-outline{display:flex;align-items:center;gap:6px;padding:9px 16px;border:1px solid var(--border);border-radius:10px;background:#fff;font-size:13.5px;font-weight:500;transition:.2s}
+.btn-outline:hover{border-color:var(--red);color:var(--red)}
+.cart-btn{position:relative;width:44px;height:44px;border-radius:10px;background:#f0f0f1;display:grid;place-items:center;transition:.2s}
+.cart-btn:hover{background:var(--red);color:#fff}
+.cart-badge{position:absolute;top:-6px;left:-6px;background:var(--red);color:#fff;font-size:11px;font-weight:700;min-width:20px;height:20px;border-radius:10px;display:grid;place-items:center;padding:0 5px;transition:transform .2s}
+.cart-badge.bump{transform:scale(1.35)}
+
+nav{background:#fff;border-top:1px solid #f1f1f2}
+.nav-in{display:flex;align-items:center;gap:6px;padding:0;overflow-x:auto;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nav-in a{padding:11px 14px;font-size:13.5px;color:#575861;border-radius:8px 8px 0 0;white-space:nowrap;transition:.15s;border-bottom:2px solid transparent}
+.nav-in a:hover{color:var(--red);background:#fafafa;border-bottom-color:var(--red)}
+.nav-phone{margin-right:auto;display:flex;align-items:center;gap:7px;color:var(--green);font-weight:700;font-size:14px;padding:8px 12px;white-space:nowrap}
+
+.hero{margin-top:20px}
+.slider{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);aspect-ratio:1300/380;min-height:180px}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity .7s;display:grid;place-items:center}
+.slide.active{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover}
+.slide-grad{color:#fff;text-align:center;padding:24px;width:100%;height:100%;display:grid;place-content:center}
+.slide-grad h2{font-size:clamp(20px,4vw,38px);font-weight:900;margin-bottom:10px}
+.slide-grad p{font-size:clamp(13px,2vw,18px);opacity:.92}
+.dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:6px;z-index:2}
+.dot{width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.55);border:none;transition:.2s}
+.dot.active{background:#fff;width:24px;border-radius:6px}
+
+.promos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px}
+.promo{border-radius:var(--radius);padding:18px 20px;color:#fff;display:flex;align-items:center;gap:14px;min-height:86px}
+.promo .p-icon{width:46px;height:46px;border-radius:12px;background:rgba(255,255,255,.22);display:grid;place-items:center;font-size:22px;flex-shrink:0}
+.promo b{display:block;font-size:15px}
+.promo span{font-size:12px;opacity:.9}
+.p1{background:linear-gradient(135deg,#ef394e,#ff7a59)} .p2{background:linear-gradient(135deg,#19bfd3,#0e7f9e)} .p3{background:linear-gradient(135deg,#7b61ff,#5b3fd4)}
+
+.amazing{margin-top:26px;background:linear-gradient(90deg,var(--red-dark),var(--red));border-radius:var(--radius);padding:18px;color:#fff}
+.amazing-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px}
+.amazing-head h2{font-size:19px;font-weight:800;display:flex;align-items:center;gap:8px}
+.countdown{display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.22);padding:7px 12px;border-radius:10px;font-weight:700;font-size:15px}
+.countdown .cd-box{min-width:32px;text-align:center}
+.amazing-row{display:flex;gap:12px;overflow-x:auto;padding-bottom:6px;scrollbar-width:thin}
+.amazing-card{background:#fff;border-radius:12px;min-width:190px;max-width:190px;padding:12px;color:var(--text);flex-shrink:0;cursor:pointer;transition:.2s;position:relative}
+.amazing-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.amazing-card img{height:130px;width:100%;object-fit:contain;margin-bottom:8px}
+.amazing-card h3{font-size:12.5px;font-weight:600;height:38px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;margin-bottom:8px}
+.amazing-price{display:flex;justify-content:space-between;align-items:flex-end;gap:6px}
+.off-chip{background:rgba(0,0,0,.25);color:#fff;font-size:11px;font-weight:700;padding:3px 9px;border-radius:20px;display:inline-block;margin-bottom:6px}
+.amazing-price b{font-size:13.5px}
+.amazing-price b small{font-weight:400;font-size:10.5px;color:var(--muted)}
+
+.products{margin-top:30px;background:#fff;border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.sec-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:12px}
+.sec-head h2{font-size:20px;font-weight:800;display:flex;align-items:center;gap:10px}
+.sec-head h2::before{content:'';width:5px;height:24px;background:var(--red);border-radius:4px}
+.sort-box{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.sort-box select{font-family:inherit;border:1px solid var(--border);border-radius:8px;padding:8px 12px;font-size:13px;background:#fff;outline:none;cursor:pointer}
+.live-status{display:inline-flex;align-items:center;gap:8px;background:#e6f7ee;color:#00713a;border:1px solid #bfe8cf;border-radius:30px;padding:8px 16px;font-size:12.5px;font-weight:600;margin-bottom:16px}
+.live-status.warn{background:#fdf6e3;color:#8a6d1a;border-color:#eee0b0}
+.dot-pulse{width:8px;height:8px;border-radius:50%;background:currentColor;animation:pulse 1.5s infinite;flex-shrink:0}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(0,160,73,.45)}70%{box-shadow:0 0 0 8px rgba(0,160,73,0)}100%{box-shadow:0 0 0 0 rgba(0,160,73,0)}}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.chip{padding:8px 18px;border-radius:30px;border:1px solid var(--border);background:#fff;font-size:13px;color:#575861;transition:.2s}
+.chip:hover{border-color:var(--red);color:var(--red)}
+.chip.active{background:var(--red);border-color:var(--red);color:#fff;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(235px,1fr));gap:16px}
+.card{border:1px solid var(--border);border-radius:12px;background:#fff;cursor:pointer;transition:.25s;display:flex;flex-direction:column}
+.card:hover{box-shadow:0 10px 26px rgba(0,0,0,.1);transform:translateY(-4px);border-color:#d5d5d8}
+.card-img{position:relative;padding:14px}
+.card-img img{aspect-ratio:1;object-fit:contain;width:100%}
+.card-body{padding:0 14px 14px;display:flex;flex-direction:column;flex:1}
+.card-title{font-size:13.5px;font-weight:600;line-height:1.7;height:46px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.mini-specs{font-size:11px;color:var(--muted);margin:4px 0 6px}
+.tags{display:flex;gap:5px;flex-wrap:wrap;margin:0 0 8px}
+.tags span{font-size:10.5px;color:var(--teal);background:#e9f8fa;padding:2px 8px;border-radius:6px}
+.src-row{display:flex;gap:6px;flex-wrap:wrap;margin:0 0 10px}
+.src{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;color:#575861;background:#f8f8f9;border:1px solid var(--border);border-radius:8px;padding:3px 8px;transition:.15s;cursor:pointer}
+.src:hover{border-color:var(--teal);color:var(--teal)}
+.src b{font-weight:700;color:var(--text)}
+.price-row{margin-top:auto;display:flex;justify-content:space-between;align-items:flex-end;gap:8px}
+.price-old{font-size:12px;color:#b3b4ba;text-decoration:line-through;min-height:17px}
+.price-now{font-size:16.5px;font-weight:800}
+.price-now small{font-size:11px;font-weight:400;color:var(--muted);margin-right:3px}
+.live-chip{display:inline-flex;align-items:center;gap:4px;font-size:10.5px;color:#00713a;background:#e6f7ee;padding:2px 8px;border-radius:20px;margin-top:5px;font-weight:600}
+.live-chip.pending{color:#8a6d1a;background:#fdf6e3}
+.add-btn{width:40px;height:40px;border-radius:10px;background:#f0f0f1;display:grid;place-items:center;color:#575861;transition:.2s;flex-shrink:0}
+.add-btn:hover{background:var(--red);color:#fff;box-shadow:0 4px 10px rgba(239,57,78,.4)}
+.empty{text-align:center;padding:60px 20px;color:var(--muted)}
+.empty .big{font-size:52px;margin-bottom:12px}
+
+.features{margin-top:26px;background:#fff;border-radius:var(--radius);padding:22px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;box-shadow:var(--shadow)}
+.feat{display:flex;align-items:center;gap:12px}
+.feat .f-icon{width:48px;height:48px;border-radius:12px;background:#fef0f1;color:var(--red);display:grid;place-items:center;flex-shrink:0}
+.feat b{display:block;font-size:14px}
+.feat span{font-size:12px;color:var(--muted)}
+
+.contact{margin-top:26px;background:#fff;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
+.contact-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:20px;align-items:stretch}
+.info-card{display:flex;flex-direction:column;gap:14px}
+.info-item{display:flex;gap:12px;align-items:flex-start;background:#f8f8f9;border-radius:12px;padding:14px}
+.info-item .i-icon{width:42px;height:42px;border-radius:10px;background:var(--red);color:#fff;display:grid;place-items:center;flex-shrink:0}
+.info-item b{display:block;font-size:13.5px;margin-bottom:3px}
+.info-item span{font-size:13px;color:#575861;line-height:1.8}
+.contact-btns{display:flex;gap:10px;margin-top:auto;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:700;transition:.2s}
+.btn-red{background:var(--red);color:#fff}
+.btn-red:hover{background:var(--red-dark)}
+.btn-green{background:#25d366;color:#fff}
+.btn-green:hover{background:#1faa52}
+.btn-ghost{border:1px solid var(--border);background:#fff;color:#575861}
+.btn-ghost:hover{border-color:var(--red);color:var(--red)}
+.map-box{border-radius:12px;overflow:hidden;min-height:320px;border:1px solid var(--border)}
+.map-box iframe{width:100%;height:100%;min-height:320px;border:0;filter:saturate(.9)}
+
+footer{margin-top:40px;background:#fff;border-top:1px solid var(--border);padding:36px 0 0}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;padding-bottom:28px}
+.footer-grid h4{font-size:15px;font-weight:700;margin-bottom:14px}
+.footer-grid p,.footer-grid a{font-size:13px;color:#575861;line-height:2}
+.footer-grid a{display:block;transition:.15s}
+.footer-grid a:hover{color:var(--red)}
+.socials{display:flex;gap:10px;margin-top:10px}
+.socials a{width:40px;height:40px;border-radius:10px;background:#f0f0f1;display:grid;place-items:center;color:#575861;transition:.2s}
+.socials a:hover{background:var(--red);color:#fff}
+.enamad{display:inline-flex;flex-direction:column;align-items:center;gap:6px;border:1px solid var(--border);border-radius:12px;padding:16px 22px;font-size:12px;color:var(--muted)}
+.footer-bottom{border-top:1px solid #f1f1f2;padding:16px 0;text-align:center;font-size:12.5px;color:var(--muted)}
+.footer-bottom b{color:var(--red)}
+
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:90;opacity:0;pointer-events:none;transition:.3s}
+.overlay.show{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;left:0;height:100%;width:min(420px,100%);background:#fff;z-index:100;transform:translateX(-105%);transition:transform .35s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column;box-shadow:8px 0 30px rgba(0,0,0,.15)}
+.drawer.open{transform:translateX(0)}
+.drawer-head{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:1px solid var(--border);font-weight:800;font-size:16px}
+.icon-x{width:36px;height:36px;border-radius:8px;background:#f0f0f1;display:grid;place-items:center;font-size:17px;transition:.2s}
+.icon-x:hover{background:var(--red);color:#fff}
+.drawer-body{flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:14px}
+.cart-item{display:flex;gap:12px;border:1px solid var(--border);border-radius:12px;padding:12px}
+.cart-item img{width:74px;height:74px;object-fit:contain;border-radius:8px;background:#fafafa}
+.ci-info{flex:1;min-width:0}
+.ci-info h4{font-size:12.5px;font-weight:600;line-height:1.7;height:42px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.ci-price{font-size:13.5px;font-weight:800;color:var(--red);margin:4px 0 8px}
+.ci-row{display:flex;justify-content:space-between;align-items:center}
+.qty{display:flex;align-items:center;gap:2px;border:1px solid var(--border);border-radius:8px;overflow:hidden}
+.qty button{width:30px;height:30px;background:#f8f8f9;font-size:15px;font-weight:700;color:#575861}
+.qty button:hover{background:var(--red);color:#fff}
+.qty span{min-width:32px;text-align:center;font-weight:700;font-size:13.5px}
+.del-btn{background:none;color:#b3b4ba;font-size:17px;padding:4px;transition:.2s}
+.del-btn:hover{color:var(--red)}
+.drawer-foot{border-top:1px solid var(--border);padding:16px 20px;display:flex;flex-direction:column;gap:10px}
+.tot-row{display:flex;justify-content:space-between;font-size:13.5px;color:#575861}
+.tot-row.final{font-size:16px;font-weight:800;color:var(--text)}
+.tot-row .save{color:var(--green);font-weight:700}
+.cart-empty{text-align:center;padding:50px 10px;color:var(--muted)}
+.cart-empty .big{font-size:56px;margin-bottom:10px}
+
+.modal{position:fixed;inset:0;z-index:110;display:grid;place-items:center;padding:18px;opacity:0;pointer-events:none;transition:.3s}
+.modal.show{opacity:1;pointer-events:auto}
+.modal-bg{position:absolute;inset:0;background:rgba(0,0,0,.55)}
+.modal-card{position:relative;background:#fff;border-radius:18px;width:min(880px,100%);max-height:92vh;overflow-y:auto;padding:26px;transform:translateY(24px);transition:.3s}
+.modal.show .modal-card{transform:translateY(0)}
+.modal-close{position:absolute;top:16px;left:16px;z-index:2}
+.pm-grid{display:grid;grid-template-columns:320px 1fr;gap:26px}
+.pm-img{background:#fafafa;border-radius:14px;padding:16px;display:grid;place-items:center}
+.pm-img img{max-height:320px;object-fit:contain}
+.pm-info h2{font-size:18px;line-height:1.8;margin-bottom:8px}
+.pm-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.pm-tags span{font-size:11px;color:var(--teal);background:#e9f8fa;padding:3px 10px;border-radius:20px}
+.cmp-box{background:#f8f8f9;border-radius:12px;padding:12px 14px;font-size:12.5px;margin-bottom:14px}
+.cmp-box h4{font-size:13px;margin-bottom:8px}
+.ck-line{display:flex;justify-content:space-between;gap:10px;line-height:2.1;align-items:center}
+.src-btns{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.src-btns .btn{padding:9px 14px;font-size:12.5px;flex:1;min-width:150px}
+.spec-table{width:100%;border-collapse:collapse;margin:6px 0 14px;font-size:12.5px}
+.spec-table td{padding:9px 12px;border-bottom:1px solid #f1f1f2}
+.spec-table td:first-child{color:var(--muted);width:150px}
+.pm-desc{font-size:13px;color:#575861;line-height:2;margin-bottom:16px}
+.pm-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;border-top:1px solid #f1f1f2;padding-top:16px}
+.pm-price b{font-size:22px;font-weight:800}
+.pm-price b small{font-size:12px;font-weight:400;color:var(--muted)}
+.pm-feats{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:14px;font-size:12px;color:#575861}
+.pm-feats span{display:flex;align-items:center;gap:5px}
+
+.ck-lines{background:#f8f8f9;border-radius:12px;padding:14px;margin:14px 0;font-size:13px;max-height:180px;overflow-y:auto;line-height:2.1}
+.ck-total{display:flex;justify-content:space-between;font-size:16px;font-weight:800;border-top:1px solid var(--border);padding-top:12px;margin-bottom:16px}
+.ck-btns{display:flex;gap:10px;flex-wrap:wrap}
+.ck-btns .btn{flex:1;min-width:150px}
+
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,80px);background:#23254e;color:#fff;padding:13px 24px;border-radius:12px;font-size:13.5px;z-index:200;transition:.35s;display:flex;align-items:center;gap:8px;box-shadow:0 8px 24px rgba(0,0,0,.25);opacity:0}
+.toast.show{transform:translate(-50%,0);opacity:1}
+.fab{position:fixed;bottom:22px;right:22px;z-index:40;width:56px;height:56px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;box-shadow:0 6px 20px rgba(0,160,73,.45);transition:.2s}
+.fab:hover{transform:scale(1.1)}
+
+@media(max-width:820px){
+  .pm-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .logo h1{font-size:16px}
+  .slider{aspect-ratio:1300/450}
+}
+@media(max-width:560px){
+  .btn-outline span{display:none}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:10px}
+  .search{order:3;min-width:100%}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="container">
+    <span>🟢 همیشه ۵٪ ارزان‌تر از دیجی‌کالا و تکنولایف</span>
+    <span>⚡ قیمت‌ها لحظه‌ای به‌روز می‌شوند</span>
+    <span>☎️ ۰۹۹۹۱۲۱۲۳۴۵</span>
+  </div>
+</div>
+
+<header>
+  <div class="container header-in">
+    <a href="#" class="logo">
+      <div class="logo-badge">🛍️</div>
+      <div><h1>سوسو و جوجو</h1><small>فروشگاه تخصصی آیفون</small></div>
+    </a>
+    <div class="search">
+      <span class="s-icon">🔍</span>
+      <input type="text" id="searchInput" placeholder="جستجو: مثلا «17 Pro Max» یا «۲۵۶ گیگ»...">
+    </div>
+    <div class="header-actions">
+      <button class="btn-outline" onclick="scrollToId('contact')">👤 <span>ورود | ثبت‌نام</span></button>
+      <button class="cart-btn" onclick="openDrawer()" title="سبد خرید">
+        🛒<span class="cart-badge" id="cartBadge">۰</span>
+      </button>
+    </div>
+  </div>
+  <nav>
+    <div class="container nav-in">
+      <a href="#hero">🏠 خانه</a>
+      <a href="#products">📱 آیفون‌ها</a>
+      <a href="#amazing">🔥 شگفت‌انگیز</a>
+      <a href="#features">✨ چرا ما؟</a>
+      <a href="#contact">📍 تماس با ما</a>
+      <a class="nav-phone" href="tel:+989991212345">📞 ۰۹۹۹۱۲۱۲۳۴۵</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+
+  <section class="hero" id="hero">
+    <div class="slider" id="slider">
+      <div class="dots" id="dots"></div>
+    </div>
+  </section>
+
+  <div class="promos">
+    <div class="promo p1"><div class="p-icon">⚡</div><div><b>۵٪ ارزان‌تر از بقیه!</b><span>قیمت ما ۵٪ زیر کمترین قیمت دیجی‌کالا و تکنولایف است</span></div></div>
+    <div class="promo p2"><div class="p-icon">🛡️</div><div><b>رجیستر شده و اورجینال</b><span>تمام دستگاه‌ها نات اکتیو و رجیستر شده</span></div></div>
+    <div class="promo p3"><div class="p-icon">🚀</div><div><b>ارسال سریع</b><span>تحویل حضوری در فروشگاه یا ارسال به سراسر کشور</span></div></div>
+  </div>
+
+  <section class="amazing" id="amazing">
+    <div class="amazing-head">
+      <h2>🔥 پیشنهاد شگفت‌انگیز</h2>
+      <div class="countdown">⏰
+        <span class="cd-box" id="cdH">۰۰</span>:<span class="cd-box" id="cdM">۰۰</span>:<span class="cd-box" id="cdS">۰۰</span>
+      </div>
+    </div>
+    <div class="amazing-row" id="amazingRow"></div>
+  </section>
+
+  <section class="products" id="products">
+    <div class="sec-head">
+      <h2>گوشی آیفون — با قیمت لحظه‌ای</h2>
+      <div class="sort-box">
+        <span>مرتب‌سازی:</span>
+        <select id="sortSelect">
+          <option value="def">جدیدترین مدل</option>
+          <option value="cheap">ارزان‌ترین</option>
+          <option value="exp">گران‌ترین</option>
+        </select>
+      </div>
+    </div>
+    <div class="live-status" id="liveStatus"><span class="dot-pulse"></span>در حال دریافت قیمت لحظه‌ای از دیجی‌کالا و تکنولایف…</div>
+    <div class="chips" id="chips"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="feat"><div class="f-icon">⚡</div><div><b>قیمت لحظه‌ای</b><span>۵٪ زیر کمترین قیمت بازار</span></div></div>
+    <div class="feat"><div class="f-icon">✅</div><div><b>رجیستر شده</b><span>بدون دردسر فعال‌سازی</span></div></div>
+    <div class="feat"><div class="f-icon">↩️</div><div><b>۷ روز ضمانت بازگشت</b><span>بدون قید و شرط</span></div></div>
+    <div class="feat"><div class="f-icon">🎧</div><div><b>پشتیبانی واقعی</b><span>تماس و واتساپ</span></div></div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="sec-head"><h2>📍 آدرس فروشگاه و تماس با ما</h2></div>
+    <div class="contact-grid">
+      <div class="info-card">
+        <div class="info-item"><div class="i-icon">📞</div><div><b>تلفن تماس</b><span><a href="tel:+989991212345">۰۹۹۹۱۲۱۲۳۴۵</a></span></div></div>
+        <div class="info-item"><div class="i-icon">📍</div><div><b>آدرس</b><span>تهران — موقعیت دقیق روی نقشه 👈 <a href="https://www.google.com/maps?q=35.710591478984426,51.27570289434255" target="_blank" style="color:var(--teal)">مشاهده در گوگل‌مپ</a></span></div></div>
+        <div class="info-item"><div class="i-icon">🕘</div><div><b>ساعت کاری</b><span>شنبه تا پنجشنبه ۱۰ صبح تا ۱۰ شب</span></div></div>
+        <div class="contact-btns">
+          <a class="btn btn-red" href="tel:+989991212345">📞 تماس تلفنی</a>
+          <a class="btn btn-green" href="https://wa.me/989991212345" target="_blank">💬 واتساپ</a>
+          <a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&destination=35.710591478984426,51.27570289434255" target="_blank">🧭 مسیریابی</a>
+        </div>
+      </div>
+      <div class="map-box">
+        <iframe src="https://maps.google.com/maps?q=35.710591478984426,51.27570289434255&hl=fa&z=16&output=embed" loading="lazy" title="موقعیت فروشگاه سوسو و جوجو"></iframe>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h4>🛍️ فروشگاه سوسو و جوجو</h4>
+      <p>قیمت‌های ما به‌صورت لحظه‌ای از دیجی‌کالا و تکنولایف دریافت و همیشه ۵٪ زیر کمترین آن‌ها محاسبه می‌شود. رجیستر شده، اورجینال، با پشتیبانی واقعی.</p>
+      <div class="socials">
+        <a href="https://wa.me/989991212345" target="_blank" title="واتساپ">💬</a>
+        <a href="https://www.google.com/maps?q=35.710591478984426,51.27570289434255" target="_blank" title="موقعیت">📍</a>
+        <a href="tel:+989991212345" title="تماس">📞</a>
+      </div>
+    </div>
+    <div>
+      <h4>دسترسی سریع</h4>
+      <a href="#products">آیفون‌ها</a>
+      <a href="#amazing">پیشنهاد شگفت‌انگیز</a>
+      <a href="#features">چرا سوسو و جوجو؟</a>
+      <a href="#contact">تماس با ما</a>
+    </div>
+    <div>
+      <h4>اطلاعات تماس</h4>
+      <p>📞 <a href="tel:+989991212345">۰۹۹۹۱۲۱۲۳۴۵</a></p>
+      <p>📍 تهران — روی نقشه ببینید</p>
+      <p>🕘 شنبه تا پنجشنبه، ۱۰ تا ۲۲</p>
+    </div>
+    <div style="text-align:center">
+      <span class="enamad">🛡️<br>نماد اعتماد<br>الکترونیکی</span>
+    </div>
+  </div>
+  <div class="footer-bottom">کلیه حقوق این وب‌سایت برای <b>فروشگاه سوسو و جوجو</b> محفوظ است © ۱۴۰۵</div>
+</footer>
+
+<div class="overlay" id="overlay" onclick="closeAll()"></div>
+<aside class="drawer" id="drawer">
+  <div class="drawer-head"><span>🛒 سبد خرید</span><button class="icon-x" onclick="closeAll()">✕</button></div>
+  <div class="drawer-body" id="drawerBody"></div>
+  <div class="drawer-foot" id="drawerFoot"></div>
+</aside>
+
+<div class="modal" id="pModal">
+  <div class="modal-bg" onclick="closeAll()"></div>
+  <div class="modal-card"><button class="icon-x modal-close" onclick="closeAll()">✕</button><div id="pmContent"></div></div>
+</div>
+
+<div class="modal" id="ckModal">
+  <div class="modal-bg" onclick="closeAll()"></div>
+  <div class="modal-card" style="width:min(560px,100%)"><button class="icon-x modal-close" onclick="closeAll()">✕</button><div id="ckContent"></div></div>
+</div>
+
+<div class="toast" id="toast"></div>
+<a class="fab" href="tel:+989991212345" title="تماس با فروشگاه">📞</a>
+
+<script>
+/* ============================================================
+   📦 محصولات — مطابق فایل اکسل (لینک‌های واقعی حفظ شده‌اند)
+   ============================================================ */
+const PRODUCTS=[
+ {id:1, img:'Pic/1.webp', name:'گوشی موبایل اپل مدل iPhone 17 Pro Max — ظرفیت ۲۵۶ گیگابایت | رم ۱۲ گیگابایت',
+  space:256, ram:12, pn:'ZA/A', cat:'flagship', amazing:true, dkp:20481188,
+  dkUrl:'https://www.digikala.com/product/dkp-20481188/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-%D9%85%D8%AF%D9%84-iphone-17-pro-max-zaa-%D8%AA%DA%A9-%D8%B3%DB%8C%D9%85-%DA%A9%D8%A7%D8%B1%D8%AA-esim-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-256-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D9%88-%D8%B1%D9%85-12-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D9%86%D8%A7%D8%AA-%D8%A7%DA%A9%D8%AA%DB%8C%D9%88/',
+  tlUrl:'https://www.technolife.com/product-149697/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-iphone-17-pro-max-za-a-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-256-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D8%B1%D9%85-12-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA---not-active-%D8%B1%D8%AC%DB%8C%D8%B3%D8%AA%D8%B1-%D8%B4%D8%AF%D9%87',
+  tags:['اپل','iPhone 17 Pro Max','۲۵۶ گیگابایت','رم ۱۲ گیگابایت','رجیستر شده','نات اکتیو','5G','A19 Pro'],
+  desc:'قدرتمندترین آیفون دنیا با نمایشگر ۶.۹ اینچی و سیستم دوربین سه‌گانه ۴۸ مگاپیکسلی؛ همیشه ۵٪ ارزان‌تر از دیجی‌کالا و تکنولایف.',
+  specs:[['نمایشگر','۶.۹ اینچ Super Retina XDR — ProMotion ۱۲۰ هرتز'],['تراشه','Apple A19 Pro'],['حافظه و رم','۲۵۶ گیگابایت | رم ۱۲ گیگابایت'],['دوربین اصلی','سه‌گانه ۴۸ مگاپیکسل — زوم اپتیکال تا ۸ برابر'],['دوربین سلفی','۱۸ مگاپیکسل Center Stage'],['باتری','پخش ویدیو تا ۳۹ ساعت'],['شبکه و نسخه','5G — نسخه ZA/A'],['وضعیت','نات اکتیو — رجیستر شده']]},
+ {id:2, img:'Pic/2.webp', name:'گوشی موبایل اپل مدل iPhone 17 Pro Max — ظرفیت ۵۱۲ گیگابایت | رم ۱۲ گیگابایت',
+  space:512, ram:12, pn:'ZA/A', cat:'flagship', amazing:false, dkp:20125788,
+  dkUrl:'https://www.digikala.com/product/dkp-20125788/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-%D9%85%D8%AF%D9%84-iphone-17-pro-max-zaa-%D8%AA%DA%A9-%D8%B3%DB%8C%D9%85-%DA%A9%D8%A7%D8%B1%D8%AA-esim-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-512-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D9%88-%D8%B1%D9%85-12-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D9%86%D8%A7%D8%AA-%D8%A7%DA%A9%D8%AA%DB%8C%D9%88/',
+  tlUrl:'https://www.technolife.com/product-165862/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-iphone-17-pro-max-za-a-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-512-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D8%B1%D9%85-12-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA---not-active-%D8%B1%D8%AC%DB%8C%D8%B3%D8%AA%D8%B1-%D8%B4%D8%AF%D9%87',
+  tags:['اپل','iPhone 17 Pro Max','۵۱۲ گیگابایت','رم ۱۲ گیگابایت','رجیستر شده','نات اکتیو','5G','A19 Pro'],
+  desc:'همان پرچمدار بی‌رقیب با فضای ذخیره‌سازی دو برابر؛ مناسب فیلم‌برداری حرفه‌ای و آرشیو بدون محدودیت.',
+  specs:[['نمایشگر','۶.۹ اینچ Super Retina XDR — ProMotion ۱۲۰ هرتز'],['تراشه','Apple A19 Pro'],['حافظه و رم','۵۱۲ گیگابایت | رم ۱۲ گیگابایت'],['دوربین اصلی','سه‌گانه ۴۸ مگاپیکسل — زوم اپتیکال تا ۸ برابر'],['دوربین سلفی','۱۸ مگاپیکسل Center Stage'],['باتری','پخش ویدیو تا ۳۹ ساعت'],['شبکه و نسخه','5G — نسخه ZA/A'],['وضعیت','نات اکتیو — رجیستر شده']]},
+ {id:3, img:'Pic/3.webp', name:'گوشی موبایل اپل مدل iPhone 17 Pro — ظرفیت ۲۵۶ گیگابایت | رم ۱۲ گیگابایت',
+  space:256, ram:12, pn:'ZA/A', cat:'flagship', amazing:true, dkp:20125739,
+  dkUrl:'https://www.digikala.com/product/dkp-20125739/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-%D9%85%D8%AF%D9%84-iphone-17-pro-zaa-%D8%AA%DA%A9-%D8%B3%DB%8C%D9%85-%DA%A9%D8%A7%D8%B1%D8%AA-esim-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-256-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D9%88-%D8%B1%D9%85-12-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D9%86%D8%A7%D8%AA-%D8%A7%DA%A9%D8%AA%DB%8C%D9%88/',
+  tlUrl:'https://www.technolife.com/product-149692/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-iphone-17-pro-za-a-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-256-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D8%B1%D9%85-12-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA---not-active-%D8%B1%D8%AC%DB%8C%D8%B3%D8%AA%D8%B1-%D8%B4%D8%AF%D9%87',
+  tags:['اپل','iPhone 17 Pro','۲۵۶ گیگابایت','رم ۱۲ گیگابایت','رجیستر شده','نات اکتیو','5G','A19 Pro'],
+  desc:'همان قدرت A19 Pro در ابعاد جمع‌وجورتر ۶.۳ اینچی؛ تعادل کامل بین قدرت، ابعاد و قیمت.',
+  specs:[['نمایشگر','۶.۳ اینچ Super Retina XDR — ProMotion ۱۲۰ هرتز'],['تراشه','Apple A19 Pro'],['حافظه و رم','۲۵۶ گیگابایت | رم ۱۲ گیگابایت'],['دوربین اصلی','سه‌گانه ۴۸ مگاپیکسل — زوم اپتیکال ۴ برابر'],['دوربین سلفی','۱۸ مگاپیکسل Center Stage'],['باتری','پخش ویدیو تا ۳۳ ساعت'],['شبکه و نسخه','5G — نسخه ZA/A'],['وضعیت','نات اکتیو — رجیستر شده']]},
+ {id:4, img:'Pic/4.webp', name:'گوشی موبایل اپل مدل iPhone 17 — ظرفیت ۲۵۶ گیگابایت | رم ۸ گیگابایت',
+  space:256, ram:8, pn:'CH/A', cat:'mid', amazing:false, dkp:20127115,
+  dkUrl:'https://www.digikala.com/product/dkp-20127115/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-%D9%85%D8%AF%D9%84-iphone-17-ch-%D8%AF%D9%88-%D8%B3%DB%8C%D9%85-%DA%A9%D8%A7%D8%B1%D8%AA-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-256-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D9%88-%D8%B1%D9%85-8-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D9%86%D8%A7%D8%AA-%D8%A7%DA%A9%D8%AA%DB%8C%D9%88/',
+  tlUrl:'https://www.technolife.com/product-165487/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-%D9%85%D8%AF%E2%80%8C%D9%84-iphone-17-ch-a-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-256-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D8%B1%D9%85-8-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA---not-active-%D8%B1%D8%AC%DB%8C%D8%B3%D8%AA%D8%B1-%D8%B4%D8%AF%D9%87',
+  tags:['اپل','iPhone 17','۲۵۶ گیگابایت','رم ۸ گیگابایت','رجیستر شده','نات اکتیو','5G','دو سیم‌کارت'],
+  desc:'اولین آیفون معمولی با نمایشگر ۱۲۰ هرتز و دوربین دوگانه ۴۸ مگاپیکسلی؛ محبوب‌ترین انتخاب سال.',
+  specs:[['نمایشگر','۶.۳ اینچ Super Retina XDR — ProMotion ۱۲۰ هرتز'],['تراشه','Apple A19'],['حافظه و رم','۲۵۶ گیگابایت | رم ۸ گیگابایت'],['دوربین اصلی','دوگانه ۴۸ + ۴۸ مگاپیکسل'],['دوربین سلفی','۱۸ مگاپیکسل Center Stage'],['باتری','پخش ویدیو تا ۳۰ ساعت'],['شبکه و نسخه','5G — نسخه CH/A دو سیم‌کارت فیزیکی'],['وضعیت','نات اکتیو — رجیستر شده']]},
+ {id:5, img:'Pic/5.webp', name:'گوشی موبایل اپل مدل iPhone 16 — ظرفیت ۱۲۸ گیگابایت | رم ۸ گیگابایت',
+  space:128, ram:8, pn:'CH/A', cat:'mid', amazing:true, dkp:17986495,
+  dkUrl:'https://www.digikala.com/product/dkp-17986495/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-%D9%85%D8%AF%D9%84-iphone-16-ch-%D8%AF%D9%88-%D8%B3%DB%8C%D9%85-%DA%A9%D8%A7%D8%B1%D8%AA-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-128-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D9%88-%D8%B1%D9%85-8-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA/',
+  tlUrl:'https://www.technolife.com/product-69610/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-%D9%85%D8%AF%D9%84-iphone-16-ch-a-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-128-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D8%B1%D9%85-8-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D8%B1%D8%AC%DB%8C%D8%B3%D8%AA%D8%B1-%D8%B4%D8%AF%D9%87',
+  tags:['اپل','iPhone 16','۱۲۸ گیگابایت','رم ۸ گیگابایت','رجیستر شده','نات اکتیو','5G','A18'],
+  desc:'تراشه A18 و دکمه Camera Control با قیمتی به‌صرفه؛ هنوز یکی از پرفروش‌ترین آیفون‌ها.',
+  specs:[['نمایشگر','۶.۱ اینچ Super Retina XDR'],['تراشه','Apple A18'],['حافظه و رم','۱۲۸ گیگابایت | رم ۸ گیگابایت'],['دوربین اصلی','دوگانه ۴۸ + ۱۲ مگاپیکسل'],['دوربین سلفی','۱۲ مگاپیکسل'],['باتری','پخش ویدیو تا ۲۲ ساعت'],['شبکه و نسخه','5G — نسخه CH/A دو سیم‌کارت فیزیکی'],['وضعیت','نات اکتیو — رجیستر شده']]},
+ {id:6, img:'Pic/6.webp', name:'گوشی موبایل اپل مدل iPhone 15 — ظرفیت ۱۲۸ گیگابایت | رم ۶ گیگابایت',
+  space:128, ram:6, pn:'CH/A', cat:'mid', amazing:false, dkp:21083244,
+  dkUrl:'https://www.digikala.com/product/dkp-21083244/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-%D9%85%D8%AF%D9%84-iphone-15-ch-%D8%AF%D9%88-%D8%B3%DB%8C%D9%85-%DA%A9%D8%A7%D8%B1%D8%AA-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-128-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D9%88-%D8%B1%D9%85-6-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA/',
+  tlUrl:'https://www.technolife.com/product-70016/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-iphone-15-ch-a-%D8%AF%D9%88-%D8%B3%DB%8C%D9%85-%DA%A9%D8%A7%D8%B1%D8%AA-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-128-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D8%B1%D9%85-6-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA---not-active-%D8%B1%D8%AC%DB%8C%D8%B3%D8%AA%D8%B1-%D8%B4%D8%AF%D9%87',
+  tags:['اپل','iPhone 15','۱۲۸ گیگابایت','رم ۶ گیگابایت','رجیستر شده','نات اکتیو','USB-C','Dynamic Island'],
+  desc:'جزیره داینامیک، درگاه USB-C و دوربین ۴۸ مگاپیکسلی؛ انتخاب هوشمندانه با قیمت مناسب.',
+  specs:[['نمایشگر','۶.۱ اینچ Super Retina XDR'],['تراشه','Apple A16 Bionic'],['حافظه و رم','۱۲۸ گیگابایت | رم ۶ گیگابایت'],['دوربین اصلی','دوگانه ۴۸ + ۱۲ مگاپیکسل'],['دوربین سلفی','۱۲ مگاپیکسل'],['باتری','پخش ویدیو تا ۲۰ ساعت'],['شبکه و نسخه','5G — نسخه CH/A دو سیم‌کارت فیزیکی'],['وضعیت','نات اکتیو — رجیستر شده']]},
+ {id:7, img:'Pic/7.webp', name:'گوشی موبایل اپل مدل iPhone 14 — ظرفیت ۱۲۸ گیگابایت | رم ۶ گیگابایت',
+  space:128, ram:6, pn:'CH/A', cat:'economy', amazing:true, dkp:9422534,
+  dkUrl:'https://www.digikala.com/product/dkp-9422534/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-%D9%85%D8%AF%D9%84-iphone-14-ch-%D8%AF%D9%88-%D8%B3%DB%8C%D9%85-%DA%A9%D8%A7%D8%B1%D8%AA-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-128-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D9%88-%D8%B1%D9%85-6-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA/',
+  tlUrl:'https://www.technolife.com/product-7452/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-iphone-14-ch-%D9%86%D8%A7%D8%AA-%D8%A7%DA%A9%D8%AA%DB%8C%D9%88-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-128-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D8%B1%D9%85-6-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D8%B1%D8%AC%DB%8C%D8%B3%D8%AA%D8%B1-%D8%B4%D8%AF%D9%87',
+  tags:['اپل','iPhone 14','۱۲۸ گیگابایت','رم ۶ گیگابایت','رجیستر شده','نات اکتیو','5G'],
+  desc:'کیفیت ساخت محبوب آیفون با تراشه A15 و شبیه‌سازی تصادف؛ بهترین ورود به دنیای اپل.',
+  specs:[['نمایشگر','۶.۱ اینچ Super Retina XDR'],['تراشه','Apple A15 Bionic'],['حافظه و رم','۱۲۸ گیگابایت | رم ۶ گیگابایت'],['دوربین اصلی','دوگانه ۱۲ + ۱۲ مگاپیکسل'],['دوربین سلفی','۱۲ مگاپیکسل'],['باتری','پخش ویدیو تا ۲۰ ساعت'],['شبکه و نسخه','5G — نسخه CH/A دو سیم‌کارت فیزیکی'],['وضعیت','نات اکتیو — رجیستر شده']]},
+ {id:8, img:'Pic/8.webp', name:'گوشی موبایل اپل مدل iPhone 13 — ظرفیت ۱۲۸ گیگابایت | رم ۴ گیگابایت',
+  space:128, ram:4, pn:'CH/A', cat:'economy', amazing:false, dkp:8366616,
+  dkUrl:'https://www.digikala.com/product/dkp-8366616/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-%D9%85%D8%AF%D9%84-iphone-13-ch-%D8%AF%D9%88-%D8%B3%DB%8C%D9%85-%DA%A9%D8%A7%D8%B1%D8%AA-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-128-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D9%88-%D8%B1%D9%85-4-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D9%86%D8%A7%D8%AA-%D8%A7%DA%A9%D8%AA%DB%8C%D9%88/',
+  tlUrl:'https://www.technolife.com/product-4993/%DA%AF%D9%88%D8%B4%DB%8C-%D9%85%D9%88%D8%A8%D8%A7%DB%8C%D9%84-%D8%A7%D9%BE%D9%84-%D9%85%D8%AF%D9%84-iphone-13-ch-a-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-128-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D8%B1%D9%85-4-%DA%AF%DB%8C%DA%AF%D8%A7%D8%A8%D8%A7%DB%8C%D8%AA-%D8%B1%D8%AC%DB%8C%D8%B3%D8%AA%D8%B1-%D8%B4%D8%AF%D9%87---not-active',
+  tags:['اپل','iPhone 13','۱۲۸ گیگابایت','رم ۴ گیگابایت','رجیستر شده','نات اکتیو','اقتصادی'],
+  desc:'افسانه‌ی محبوب اپل با دوربین دوگانه و باتری دوام‌دار؛ اقتصادی‌ترین آیفون رجیستر شده بازار.',
+  specs:[['نمایشگر','۶.۱ اینچ Super Retina XDR'],['تراشه','Apple A15 Bionic'],['حافظه و رم','۱۲۸ گیگابایت | رم ۴ گیگابایت'],['دوربین اصلی','دوگانه ۱۲ + ۱۲ مگاپیکسل'],['دوربین سلفی','۱۲ مگاپیکسل'],['باتری','پخش ویدیو تا ۱۹ ساعت'],['شبکه و نسخه','5G — نسخه CH/A دو سیم‌کارت فیزیکی'],['وضعیت','نات اکتیو — رجیستر شده']]},
+];
+
+const FALLBACK={1:198000000,2:229000000,3:168000000,4:131000000,5:86000000,6:69000000,7:57000000,8:49000000};
+
+/* 🔌 آدرس ورکر قیمت لحظه‌ای */
+const API_URL='https://soosoo-prices.alidqn7531.workers.dev/api/prices';
+
+const CATS=[{k:'all',t:'همه محصولات'},{k:'flagship',t:'پرچمداران (سری ۱۷ Pro)'},{k:'mid',t:'میان‌رده (17 / 16 / 15)'},{k:'economy',t:'اقتصادی (14 / 13)'}];
+const FALLBACK_IMG='data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><rect width="300" height="300" fill="#f4f4f5" rx="20"/><text x="150" y="140" font-size="70" text-anchor="middle">📱</text><text x="150" y="200" font-size="20" text-anchor="middle" fill="#81858b" font-family="Tahoma">سوسو و جوجو</text></svg>');
+function imgFallback(el){el.onerror=null;el.src=FALLBACK_IMG;}
+
+const $=s=>document.querySelector(s);
+const fmt=n=>Number(n).toLocaleString('fa-IR');
+const money=n=>fmt(n)+' <small>تومان</small>';
+const getById=id=>PRODUCTS.find(p=>p.id===id);
+
+let cart={};
+try{cart=JSON.parse(localStorage.getItem('soosoo_cart'))||{};}catch(e){cart={};}
+const save=()=>{try{localStorage.setItem('soosoo_cart',JSON.stringify(cart));}catch(e){}};
+const state={q:'',cat:'all',sort:'def'};
+let modalQty=1;
+
+/* ---------- قیمت لحظه‌ای ---------- */
+let PRICES={};
+const priceOf=id=>PRICES[id]||{price:FALLBACK[id]||0,ref:null,dk:null,tl:null,live:false};
+
+function applyPrices(){
+  document.querySelectorAll('[data-pid]').forEach(box=>{
+    const id=+box.dataset.pid;const p=priceOf(id);if(!p.price)return;
+    const now=box.querySelector('.p-now'),old=box.querySelector('.p-old'),chip=box.querySelector('.p-chip');
+    if(now)now.innerHTML=money(p.price);
+    if(old)old.innerHTML=p.ref?fmt(p.ref):'';
+    if(chip){
+      if(p.live){chip.classList.remove('pending');chip.textContent=p.ref?('⚡ '+fmt(Math.max(1,Math.round((1-p.price/p.ref)*100)))+'٪ زیر کمترین قیمت بازار'):'⚡ قیمت لحظه‌ای';}
+      else{chip.classList.add('pending');chip.textContent='⏳ در حال دریافت قیمت لحظه‌ای…';}
+    }
+    const dk=box.querySelector('.dk-p'),tl=box.querySelector('.tl-p');
+    if(dk)dk.innerHTML=p.dk?fmt(p.dk):'—';
+    if(tl)tl.innerHTML=p.tl?fmt(p.tl):'—';
+  });
+  renderCart();
+}
+async function loadPrices(){
+  const st=$('#liveStatus');
+  try{
+    const r=await fetch(API_URL+'?t='+Date.now(),{cache:'no-store'});
+    if(!r.ok)throw 0;
+    const j=await r.json();
+    (j.items||[]).forEach(it=>{
+      PRICES[it.id]={price:it.final||FALLBACK[it.id]||0,ref:it.min,
+        dk:(it.dk&&it.dk.ok)?it.dk.price:null, tl:(it.tl&&it.tl.ok)?it.tl.price:null, live:it.min!=null};
+    });
+    applyPrices();
+    const t=new Date(j.ts||Date.now()).toLocaleTimeString('fa-IR',{hour:'2-digit',minute:'2-digit'});
+    st.className='live-status';
+    st.innerHTML='<span class="dot-pulse"></span>قیمت‌ها ۵٪ زیر کمترین قیمت دیجی‌کالا و تکنولایف — آخرین به‌روزرسانی: '+t;
+  }catch(e){
+    st.className='live-status warn';
+    st.innerHTML='<span class="dot-pulse"></span>اتصال به منابع قیمت برقرار نشد — فعلاً قیمت تقریبی نمایش داده می‌شود';
+  }
+}
+setInterval(loadPrices,5*60*1000);
+
+/* ---------- اسلایدر ---------- */
+const SLIDES=[
+  {img:'Main_Baner.jpg'},
+  {grad:'linear-gradient(135deg,#ef394e,#ff7a59)',h:'⚡ همیشه ۵٪ ارزان‌تر',p:'قیمت‌های ما لحظه‌ای از دیجی‌کالا و تکنولایف گرفته می‌شود و ۵٪ زیر کمترین آن‌هاست'},
+  {grad:'linear-gradient(135deg,#19bfd3,#0e7f9e)',h:'🛡️ رجیستر شده و اورجینال',p:'تمام دستگاه‌ها نات اکتیو، رجیستر شده و دارای ضمانت بازگشت'}
+];
+function buildSlider(){
+  const s=$('#slider');
+  SLIDES.forEach((sl,i)=>{
+    const d=document.createElement('div');
+    d.className='slide'+(i===0?' active':'');
+    if(sl.img){d.innerHTML='<img src="'+sl.img+'" alt="بنر فروشگاه سوسو و جوجو" onerror="imgFallback(this)">';}
+    else{d.innerHTML='<div class="slide-grad" style="background:'+sl.grad+'"><h2>'+sl.h+'</h2><p>'+sl.p+'</p></div>';}
+    s.insertBefore(d,$('#dots'));
+  });
+  $('#dots').innerHTML=SLIDES.map((_,i)=>'<button class="dot'+(i===0?' active':'')+'" onclick="goSlide('+i+')"></button>').join('');
+}
+let cur=0;
+function goSlide(i){cur=i;document.querySelectorAll('.slide').forEach((el,j)=>el.classList.toggle('active',j===i));document.querySelectorAll('.dot').forEach((el,j)=>el.classList.toggle('active',j===i));}
+setInterval(()=>goSlide((cur+1)%SLIDES.length),5000);
+
+/* ---------- کارت محصول ---------- */
+function srcRow(p){
+  return '<div class="src-row">'+
+    '<a class="src" href="'+p.dkUrl+'" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="مشاهده در دیجی‌کالا">🛒 دیجی‌کالا: <b class="dk-p">—</b></a>'+
+    '<a class="src" href="'+p.tlUrl+'" target="_blank" rel="noopener" onclick="event.stopPropagation()" title="مشاهده در تکنولایف">🏪 تکنولایف: <b class="tl-p">—</b></a></div>';
+}
+function cardHTML(p){
+  const pr=priceOf(p.id);
+  return '<article class="card" data-id="'+p.id+'">'+
+    '<div class="card-img"><img src="'+p.img+'" alt="'+p.name+'" loading="lazy" onerror="imgFallback(this)"></div>'+
+    '<div class="card-body">'+
+      '<h3 class="card-title">'+p.name+'</h3>'+
+      '<div class="mini-specs">رم '+fmt(p.ram)+' گیگ | '+fmt(p.space)+' گیگابایت | نسخه '+p.pn+' | رجیستر شده</div>'+
+      '<div class="tags">'+p.tags.slice(0,3).map(t=>'<span>#'+t+'</span>').join('')+'</div>'+
+      srcRow(p)+
+      '<div class="price-row" data-pid="'+p.id+'">'+
+        '<div><div class="p-old price-old">'+(pr.ref?fmt(pr.ref):'')+'</div>'+
+        '<div class="price-now p-now">'+money(pr.price)+'</div>'+
+        '<span class="p-chip live-chip pending">⏳ در حال دریافت قیمت…</span></div>'+
+        '<button class="add-btn" data-add="'+p.id+'" title="افزودن به سبد">🛒</button>'+
+      '</div></div></article>';
+}
+function renderGrid(){
+  let list=PRODUCTS.filter(p=>state.cat==='all'||p.cat===state.cat);
+  if(state.q){const q=state.q.trim();list=list.filter(p=>(p.name+' '+p.tags.join(' ')).includes(q));}
+  const S={def:(a,b)=>a.id-b.id,exp:(a,b)=>priceOf(b.id).price-priceOf(a.id).price,cheap:(a,b)=>priceOf(a.id).price-priceOf(b.id).price};
+  list=[...list].sort(S[state.sort]);
+  $('#grid').innerHTML=list.length?list.map(cardHTML).join(''):
+    '<div class="empty" style="grid-column:1/-1"><div class="big">🔍</div><p>محصولی با این مشخصات پیدا نشد!</p></div>';
+}
+function renderAmazing(){
+  const list=PRODUCTS.filter(p=>p.amazing);
+  $('#amazingRow').innerHTML=list.map(p=>{
+    const pr=priceOf(p.id);
+    return '<div class="amazing-card" data-pid="'+p.id+'" onclick="openModal('+p.id+')">'+
+      '<span class="off-chip">⚡ ۵٪ زیر قیمت بازار</span>'+
+      '<img src="'+p.img+'" alt="'+p.name+'" loading="lazy" onerror="imgFallback(this)">'+
+      '<h3>'+p.name+'</h3>'+
+      '<div class="amazing-price"><div><div class="p-old price-old">'+(pr.ref?fmt(pr.ref):'')+'</div><b class="p-now">'+money(pr.price)+'</b></div>'+
+      '<button class="add-btn" onclick="event.stopPropagation();addToCart('+p.id+')">+</button></div></div>';
+  }).join('');
+}
+function renderChips(){
+  $('#chips').innerHTML=CATS.map(c=>'<button class="chip'+(state.cat===c.k?' active':'')+'" onclick="setCat(\''+c.k+'\')">'+c.t+'</button>').join('');
+}
+function setCat(k){state.cat=k;renderChips();renderGrid();}
+
+/* ---------- مودال محصول ---------- */
+function cmpHTML(id){
+  const p=priceOf(id), prod=getById(id);
+  const row=(label,val,url)=>{
+    const link=url?' <a href="'+url+'" target="_blank" rel="noopener" style="color:var(--teal);font-size:11px;font-weight:600">مشاهده ↗</a>':'';
+    return '<div class="ck-line"><span>'+label+'</span><b>'+val+link+'</b></div>';
+  };
+  let h='<h4>🔎 مقایسه لحظه‌ای قیمت</h4>';
+  h+=row('🛒 قیمت دیجی‌کالا', p.dk?fmt(p.dk)+' تومان':'— در دسترس نیست —', prod.dkUrl);
+  h+=row('🏪 قیمت تکنولایف', p.tl?fmt(p.tl)+' تومان':'— در دسترس نیست —', prod.tlUrl);
+  if(p.ref)h+=row('⬇️ کمترین قیمت دو فروشگاه', fmt(p.ref)+' تومان', null);
+  h+=row('⚡ قیمت شما (سوسو و جوجو)', fmt(p.price)+' تومان'+(p.live?' ✅':' (تقریبی)'), null);
+  return h;
+}
+function openModal(id){
+  const p=getById(id);const pr=priceOf(id);modalQty=1;
+  $('#pmContent').innerHTML='<div class="pm-grid">'+
+    '<div class="pm-img"><img src="'+p.img+'" alt="'+p.name+'" onerror="imgFallback(this)"></div>'+
+    '<div class="pm-info"><h2>'+p.name+'</h2>'+
+    '<div class="pm-tags">'+p.tags.map(t=>'<span>#'+t+'</span>').join('')+'</div>'+
+    '<div class="cmp-box">'+cmpHTML(id)+'</div>'+
+    '<div class="src-btns">'+
+      '<a class="btn btn-ghost" href="'+p.dkUrl+'" target="_blank" rel="noopener">🛒 بررسی در دیجی‌کالا</a>'+
+      '<a class="btn btn-ghost" href="'+p.tlUrl+'" target="_blank" rel="noopener">🏪 بررسی در تکنولایف</a></div>'+
+    '<table class="spec-table">'+p.specs.map(s=>'<tr><td>'+s[0]+'</td><td>'+s[1]+'</td></tr>').join('')+'</table>'+
+    '<p class="pm-desc">'+p.desc+'</p>'+
+    '<div class="pm-foot">'+
+      '<div class="pm-price" data-pid="'+p.id+'">'+
+        '<div class="p-old price-old">'+(pr.ref?fmt(pr.ref)+' تومان':'')+'</div>'+
+        '<b class="p-now">'+money(pr.price)+'</b>'+
+        '<div class="p-chip live-chip pending">⏳ قیمت لحظه‌ای…</div></div>'+
+      '<div style="display:flex;gap:10px;align-items:center">'+
+        '<div class="qty"><button onclick="mq(-1)">−</button><span id="mqVal">۱</span><button onclick="mq(1)">+</button></div>'+
+        '<button class="btn btn-red" onclick="addToCart('+p.id+',modalQty);closeAll()">🛒 افزودن به سبد</button></div>'+
+    '</div></div></div>';
+  $('#pModal').classList.add('show');$('#overlay').classList.add('show');
+  document.body.style.overflow='hidden';
+}
+function mq(d){modalQty=Math.min(5,Math.max(1,modalQty+d));$('#mqVal').textContent=fmt(modalQty);}
+
+/* ---------- سبد خرید ---------- */
+function addToCart(id,qty=1){
+  cart[id]=Math.min(10,(cart[id]||0)+qty);save();updateBadge(true);renderCart();
+  toast('✅ «'+getById(id).name.slice(0,30)+'...» به سبد اضافه شد');
+}
+function setQty(id,d){cart[id]=Math.min(10,Math.max(0,(cart[id]||0)+d));if(!cart[id])delete cart[id];save();updateBadge();renderCart();}
+function removeItem(id){delete cart[id];save();updateBadge();renderCart();}
+function updateBadge(bump){
+  const n=Object.values(cart).reduce((a,b)=>a+b,0);
+  const b=$('#cartBadge');b.textContent=fmt(n);
+  if(bump){b.classList.add('bump');setTimeout(()=>b.classList.remove('bump'),250);}
+}
+function cartTotals(){
+  let sum=0,saveM=0;
+  for(const id in cart){const pr=priceOf(+id);sum+=pr.price*cart[id];if(pr.ref)saveM+=(pr.ref-pr.price)*cart[id];}
+  return{sum,saveM};
+}
+function renderCart(){
+  const ids=Object.keys(cart);
+  const body=$('#drawerBody'),foot=$('#drawerFoot');
+  if(!ids.length){
+    body.innerHTML='<div class="cart-empty"><div class="big">🛒</div><p>سبد خرید شما خالی است!</p><p style="font-size:12px;margin-top:6px">از بخش محصولات، گوشی مورد نظرت را انتخاب کن.</p></div>';
+    foot.innerHTML='<button class="btn btn-red" style="width:100%" onclick="closeAll();scrollToId(\'products\')">📱 مشاهده محصولات</button>';
+    return;
+  }
+  body.innerHTML=ids.map(id=>{const p=getById(+id);const pr=priceOf(+id);return `
+    <div class="cart-item">
+      <img src="${p.img}" alt="" onerror="imgFallback(this)">
+      <div class="ci-info">
+        <h4>${p.name}</h4>
+        <div class="ci-price">${fmt(pr.price)} تومان</div>
+        <div class="ci-row">
+          <div class="qty"><button onclick="setQty(${id},-1)">−</button><span>${fmt(cart[id])}</span><button onclick="setQty(${id},1)">+</button></div>
+          <button class="del-btn" onclick="removeItem(${id})" title="حذف">🗑️</button>
+        </div>
+      </div></div>`;}).join('');
+  const{sum,saveM}=cartTotals();
+  foot.innerHTML=`
+    ${saveM?`<div class="tot-row"><span>سود شما نسبت به بازار:</span><span class="save">${fmt(saveM)} تومان 🔥</span></div>`:''}
+    <div class="tot-row final"><span>مبلغ قابل پرداخت:</span><span>${fmt(sum)} تومان</span></div>
+    <button class="btn btn-red" style="width:100%" onclick="openCheckout()">✅ ثبت سفارش</button>`;
+}
+function openDrawer(){$('#drawer').classList.add('open');$('#overlay').classList.add('show');renderCart();document.body.style.overflow='hidden';}
+
+/* ---------- تسویه ---------- */
+function openCheckout(){
+  const ids=Object.keys(cart);if(!ids.length)return;
+  const{sum}=cartTotals();
+  const lines=ids.map(id=>{const p=getById(+id);return '<div class="ck-line"><span>'+p.name.slice(0,38)+'… ×'+fmt(cart[id])+'</span><b>'+fmt(priceOf(+id).price*cart[id])+'</b></div>';}).join('');
+  let msg='سلام! می‌خوام این سفارش رو ثبت کنم:\n';
+  ids.forEach(id=>{const p=getById(+id);msg+='• '+p.name+' — '+fmt(cart[id])+' عدد — '+fmt(priceOf(+id).price)+' تومان\n';});
+  msg+='مجموع: '+fmt(sum)+' تومان (قیمت لحظه‌ای، ۵٪ زیر دیجی‌کالا و تکنولایف)';
+  $('#ckContent').innerHTML='<h3 style="font-size:18px">🧾 خلاصه سفارش شما</h3>'+
+    '<div class="ck-lines">'+lines+'</div>'+
+    '<div class="ck-total"><span>مبلغ کل:</span><span style="color:var(--red)">'+fmt(sum)+' تومان</span></div>'+
+    '<div class="ck-btns">'+
+      '<a class="btn btn-red" href="tel:+989991212345">📞 ثبت سفارش تلفنی</a>'+
+      '<a class="btn btn-green" href="https://wa.me/989991212345?text='+encodeURIComponent(msg)+'" target="_blank">💬 سفارش در واتساپ</a></div>'+
+    '<p style="font-size:12px;color:var(--muted);margin-top:12px;text-align:center">قیمت‌ها لحظه‌ای محاسبه شده‌اند و پس از تماس نهایی می‌شوند ✅</p>';
+  $('#pModal').classList.remove('show');
+  $('#ckModal').classList.add('show');$('#overlay').classList.add('show');
+}
+
+/* ---------- عمومی ---------- */
+function closeAll(){
+  document.querySelectorAll('.modal').forEach(m=>m.classList.remove('show'));
+  $('#drawer').classList.remove('open');$('#overlay').classList.remove('show');
+  document.body.style.overflow='';
+}
+function scrollToId(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'});}
+let toastT;
+function toast(msg){const t=$('#toast');t.innerHTML=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2600);}
+
+ $('#grid').addEventListener('click',e=>{
+  const add=e.target.closest('[data-add]');
+  if(add){addToCart(+add.dataset.add);return;}
+  const card=e.target.closest('.card');
+  if(card)openModal(+card.dataset.id);
+});
+ $('#searchInput').addEventListener('input',e=>{state.q=e.target.value;renderGrid();});
+ $('#sortSelect').addEventListener('change',e=>{state.sort=e.target.value;renderGrid();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll();});
+
+/* ---------- شمارش معکوس ---------- */
+setInterval(()=>{
+  const now=new Date(),end=new Date(now);end.setHours(23,59,59,999);
+  let d=Math.floor((end-now)/1000);
+  const h=String(Math.floor(d/3600)).padStart(2,'0'),m=String(Math.floor(d%3600/60)).padStart(2,'0'),s=String(d%60).padStart(2,'0');
+  const fa=x=>x.replace(/\d/g,i=>'۰۱۲۳۴۵۶۷۸۹'[i]);
+  $('#cdH').textContent=fa(h);$('#cdM').textContent=fa(m);$('#cdS').textContent=fa(s);
+},1000);
+
+/* ---------- شروع ---------- */
+buildSlider();renderChips();renderGrid();renderAmazing();renderCart();updateBadge();
+applyPrices();
+loadPrices();
+</script>
+</body>
+</html>
